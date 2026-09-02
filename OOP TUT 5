@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int area(int side)
+{
+    return side * side;
+}
+
+int area(int length, int breadth)
+{
+    return length * breadth;
+}
+
+int main()
+{
+    int side, length, breadth;
+
+    cout << "Enter side of square: ";
+    cin >> side;
+
+    cout << "Area of square = " << area(side) << endl;
+
+    cout << "\nEnter length of rectangle: ";
+    cin >> length;
+
+    cout << "Enter breadth of rectangle: ";
+    cin >> breadth;
+
+    cout << "Area of rectangle = " << area(length, breadth) << endl;
+
+    return 0;
+}
