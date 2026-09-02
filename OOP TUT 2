@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+int i,sum=0;
+cout<<"Even numbers between 1 to 50: ";
+for (i=2;i<=50;i+=2) {
+cout << i <<" ";
+sum+=i;
+}
+cout<<"\n\nsum:"<<sum;
+return 0;
+}
