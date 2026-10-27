@@ -1,0 +1,76 @@
+```cpp
+#include <iostream>
+using namespace std;
+
+class Employee
+{
+protected:
+    int id;
+    char name[50];
+
+public:
+    void getDetails()
+    {
+        cout << "Enter Employee ID: ";
+        cin >> id;
+
+        cout << "Enter Employee Name: ";
+        cin >> name;
+    }
+
+    void displayDetails()
+    {
+        cout << "\nEmployee ID: " << id;
+        cout << "\nEmployee Name: " << name;
+    }
+};
+
+class Salary
+{
+protected:
+    float basic, hra, da;
+
+public:
+    void getSalary()
+    {
+        cout << "Enter Basic Salary: ";
+        cin >> basic;
+
+        cout << "Enter HRA: ";
+        cin >> hra;
+
+        cout << "Enter DA: ";
+        cin >> da;
+    }
+
+    float calculateGross()
+    {
+        return basic + hra + da;
+    }
+};
+
+class EmployeeSalary : public Employee, public Salary
+{
+public:
+    void display()
+    {
+        displayDetails();
+
+        cout << "\nBasic Salary: " << basic;
+        cout << "\nHRA: " << hra;
+        cout << "\nDA: " << da;
+        cout << "\nGross Salary: " << calculateGross() << endl;
+    }
+};
+
+int main()
+{
+    EmployeeSalary e;
+
+    e.getDetails();
+    e.getSalary();
+    e.display();
+
+    return 0;
+}
+```
