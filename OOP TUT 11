@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+
+// Function template
+template <typename T>
+T add(T a, T b) {
+    return a + b;
+}
+
+// Class template
+template <typename T>
+class Calculator {
+private:
+    T num;
+
+public:
+    Calculator(T n) {
+        num = n;
+    }
+
+    void display() {
+        cout << "Value = " << num << endl;
+    }
+};
+
+int main() {
+    // Using function template
+    cout << "Sum of integers: " << add(10, 20) << endl;
+    cout << "Sum of decimals: " << add(2.5, 3.5) << endl;
+
+    // Using class template
+    Calculator<int> c1(100);
+    Calculator<double> c2(25.5);
+
+    c1.display();
+    c2.display();
+
+    return 0;
+}
+
