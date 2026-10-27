@@ -1,0 +1,23 @@
+#include <iostream>
+#include <stdexcept>
+using namespace std;
+
+int main() {
+    int marks;
+
+    cout << "Enter exam marks: ";
+    cin >> marks;
+
+    try {
+        if (marks < 0 || marks > 100) {
+            throw out_of_range("Marks must be between 0 and 100.");
+        }
+
+        cout << "Valid marks: " << marks << endl;
+    }
+    catch (const out_of_range& e) {
+        cout << "Exception: " << e.what() << endl;
+    }
+
+    return 0;
+}
